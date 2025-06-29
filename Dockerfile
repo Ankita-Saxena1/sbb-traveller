@@ -2,6 +2,8 @@ FROM openjdk:17-jdk-slim
 
 VOLUME /tmp
 
-COPY target/sbbtraveller-0.0.1-SNAPSHOT.jar sbbtraveller.jar
+EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","/sbbtraveller.jar"]
+COPY target/sbbtraveller-1.0-SNAPSHOT.jar sbbtraveller.jar
+
+ENTRYPOINT ["java","-jar","sbbtraveller.jar"]
